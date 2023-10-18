@@ -3,17 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package jptv22library;
+package entity;
 
 /**
  *
  * @author pupil
  */
-public class JPTV22Library {
+public class Book {
 
-    public static void main(String[] args) {
-        App app = new App();
-        app.run();
+    String title;
+    int publishedYear;
+    Author[] authors;
+    
+    public void setTitle(String nextLine) {
+        
     }
     
 }
