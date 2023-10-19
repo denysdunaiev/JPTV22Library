@@ -18,5 +18,22 @@ public class Book {
     public void setTitle(String nextLine) {
         
     }
+
+    public int getPublishedYear() {
+        return publishedYear;
+    }
+
+    public void setPublishedYear(int publishedYear) {
+        this.publishedYear = publishedYear;
+    }
+
+    public Author[] getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Author[] authors) {
+        this.authors = authors;
+    }
+    
     
 }

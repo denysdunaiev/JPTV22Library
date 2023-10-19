@@ -25,6 +25,8 @@ public class BookManager {
         System.out.println("Enter title: ");
         Book book = new Book();
         book.setTitle(scanner.nextLine());
+        System.out.println("Enter published year: ");
+        book.setPublishedYear(scanner.nextInt()); scanner.nextLine();
     }
     
 }

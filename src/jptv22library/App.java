@@ -7,6 +7,7 @@ package jptv22library;
 
 import java.util.Scanner;
 import managers.BookManager;
+import managers.ReaderManager;
 
 /**
  *
@@ -24,6 +25,7 @@ public class App {
             System.out.println("Select task:");
             System.out.println("0. Exit");
             System.out.println("1. Add new book");
+            System.out.println("2. Add new reader");
             System.out.print("Task number: ");
             int task = scanner.nextInt(); scanner.nextLine();
             switch (task) {
@@ -34,6 +36,11 @@ public class App {
                     BookManager bookManager;
                     bookManager = new BookManager(scanner);
                     bookManager.addBook();
+                    break;
+                case 2:
+                    ReaderManager readerManager;
+                    readerManager = new ReaderManager(scanner);
+                    readerManager.addReader();
                     break;
                 default:
                     System.out.println("Select task from list tasks");
