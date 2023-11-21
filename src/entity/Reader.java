@@ -5,20 +5,32 @@
  */
 package entity;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-
-public class Reader {
-    String firstname;
-    String lastname;
-    String phone;
+/**
+ *
+ * @author pupil
+ */
+public class Reader implements Serializable{
+    private String firstname;
+    private String lastname;
+    private String phone;
 
     public Reader() {
     }
 
     public Reader(String firstname, String lastname, String phone) {
         this.firstname = firstname;
-        this.firstname = lastname;
+        this.lastname = lastname;
+        this.phone = phone;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -38,20 +50,12 @@ public class Reader {
         this.lastname = lastname;
     }
 
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 29 * hash + Objects.hashCode(this.firstname);
-        hash = 29 * hash + Objects.hashCode(this.lastname);
-        hash = 29 * hash + Objects.hashCode(this.phone);
+        int hash = 7;
+        hash = 79 * hash + Objects.hashCode(this.firstname);
+        hash = 79 * hash + Objects.hashCode(this.lastname);
+        hash = 79 * hash + Objects.hashCode(this.phone);
         return hash;
     }
 
@@ -81,7 +85,13 @@ public class Reader {
 
     @Override
     public String toString() {
-        return "Reader{" + "firstname=" + firstname + ", lastname=" + lastname + ", phone=" + phone + '}';
+        return "Reader{" 
+                + "firstname=" + firstname 
+                + ", lastname=" + lastname 
+                + ", phone=" + phone 
+                + '}';
     }
+    
+    
     
 }

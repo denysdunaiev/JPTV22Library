@@ -5,27 +5,49 @@
  */
 package managers;
 
-import java.util.Scanner;
 import entity.Reader;
+import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author pupil
  */
 public class ReaderManager {
+
     private final Scanner scanner;
-    public ReaderManager(Scanner scanner){
+
+    public ReaderManager(Scanner scanner) {
         this.scanner = scanner;
     }
-    public void addReader(){
-        System.out.println("----- Add new reader -----");
+
+    public Reader addReader() {
+        System.out.println(" ----- Add new reader -----");
         Reader reader = new Reader();
-        System.out.println("Firstname: ");
+        System.out.print("Firstname: ");
         reader.setFirstname(scanner.nextLine());
-        System.out.println("Lastname: ");
+        System.out.print("Lastname: ");
         reader.setLastname(scanner.nextLine());
-        System.out.println("Phone: ");
+        System.out.print("Phone: ");
         reader.setPhone(scanner.nextLine());
-        System.out.println("Reader added " + reader.toString());
+        System.out.println("Added reader " + reader.toString());
+        return reader;
     }
+
+    public int pirntListReaders(List<Reader> readers) {
+        int count = 0;
+        System.out.println("List readers: ");
+        for (int i = 0; i < readers.size(); i++) {
+            System.out.printf("%d. %s. %s. %s%n",
+                    i+1,
+                    readers.get(i).getFirstname(),
+                    readers.get(i).getLastname(),
+                    readers.get(i).getPhone()
+            );
+            count++;
+        }
+        return count;
+    }
+    
+    
 }
